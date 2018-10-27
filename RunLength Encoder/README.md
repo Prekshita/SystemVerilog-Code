@@ -5,8 +5,13 @@ Run length codes are a simple way to compress data to reduce storage and transmi
 Example:
 
 0x4B { 0, ‘K’ }
+
 0x61 { 0, ‘a’ }
+
 0x62 { 0, ‘b’ }
+
 0xEF { 1, ‘o’ }
+
 0x04 { 4 }
+
 0x6D { 0, ‘m’ }
