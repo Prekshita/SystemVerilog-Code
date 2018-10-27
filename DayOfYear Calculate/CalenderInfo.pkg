@@ -1,0 +1,11 @@
+
+//Description:
+//-------------
+// userdefined enum for both calender type (Symmetry, gregorian) by taking cumulative value of months.
+
+package CalenderInfo; 
+
+typedef enum {JANs=28, FEBs=63, MARs=91, APLs=119, MAYs=154, JUNs=182, JLYs=210, AUGs=245, SEPs=273, OCTs=301, NOVs=336, DECs=364}symmetry_t;
+typedef enum {JANg=31, FEBg=59, MARg=90, APLg=120, MAYg=151, JUNg=181, JLYg=212, AUGg=243, SEPg=273, OCTg=304, NOVg=334, DECg=365}gregorian_t;
+
+endpackage 
