@@ -6,9 +6,9 @@
 //
 //Description :
 //______________________
-//This module implemets the Avalon protocol Master. master will continuesly moniter the waitrequest signal . which is sent from slave. if the waitrequest is low //master can initiate the request. the acknowledgment from the slave is monitered by masrer at at falling edge of the waitrequest signal.
-//clock frequency is 10Khz, each cycle is 10msec. 
-//
+//This module implemets the Avalon protocol Master. master will continuesly moniter the waitrequest signal .
+//which is sent from slave. if the waitrequest is low //master can initiate the request. the acknowledgment from the slave
+//is monitered by masrer at at falling edge of the waitrequest signal.clock frequency is 10Khz, each cycle is 10msec. 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module tb();
