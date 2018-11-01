@@ -7,8 +7,9 @@
 //Description :
 //______________________
 //this package has structure of all slave register, read function and write function.
-//here function return type is void , so function will not return any value, the readdata is passed to the calling module through output port.
-//inside function there is unique case statement for each address. if the address doesent match a default value is displayed.
+//here function return type is void , so function will not return any value, the readdata is passed to the calling module
+//through output port.inside function there is unique case statement for each address. if the address doesent match a default 
+//value is displayed.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
