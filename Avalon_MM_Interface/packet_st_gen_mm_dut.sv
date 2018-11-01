@@ -6,8 +6,13 @@
 //
 //Description :
 //______________________
-// This module implements the avalon slave(set of registers). This module  will receive request from master (address, read,write, writedata) and retuns "readdata" //and waitrequest signal clock and reset are input to slave modulr from master. here reset is active hight reset.when reset asserted the slave registers will be //initilized to default value. writerequest signal is output from slave. This signal will be low when reset is asserted will be low until it receives request from //master. it  will stay high for the next 4 clock cycle after receiving request from master. during this 4 cycle it will check for the valid address, valid //read, and valid write operation. This module will call the reead() write() function accordingly.
-// there is a counter to keep count of 4 waitrequest high signal.
+// This module implements the avalon slave(set of registers). This module  will receive request from master 
+//(address, read,write, writedata) and retuns "readdata" and waitrequest signal clock and reset are input to slave modulr from master.
+//here reset is active hight reset.when reset asserted the slave registers will be initilized to default value. writerequest signal is 
+//output from slave. This signal will be low when reset is asserted will be low until it receives request from master. it  will stay 
+//high for the next 4 clock cycle after receiving request from master. during this 4 cycle it will check for the valid address, valid
+//read, and valid write operation. This module will call the reead() write() function accordingly.there is a counter to keep count of 4 
+//waitrequest high signal.
 ////////////////////////////////////////////////////////////////////////////////
 
 
