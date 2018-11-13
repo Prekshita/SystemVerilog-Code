@@ -13,16 +13,13 @@
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
 `include "FSMpackageModule.sv"
 
 import FSMpackage::*;
 module FSMControl (input reg [7:0]count, input logic clock,input reg [6:0] temp,input logic [6:0] dataIn, input logic reset_n, output reg tag, output reg valid);
 
 
-state pstate, nextstate;
+state pstate, nextstate;  // state variabale 
 
 always_ff@(posedge clock, negedge reset_n)
 begin
@@ -42,8 +39,7 @@ case(pstate)
 	READ1 : 
 		begin 
 				
-				nextstate = READ1;
-				
+				nextstate = READ1;				
 		end 
 endcase			
 end
@@ -59,8 +55,7 @@ begin
 	end 
 	else
 	begin
-		valid = 0;
-
+		valid = 0
 end
 if ((temp == dataIn) && count == 0) // setting value for tag bit based on previous present value and count value
 begin 
@@ -70,9 +65,6 @@ else
 begin
 	tag = 0;
 end
-
-
-
 
 end
 else if (pstate == IDLE) // tag and value bit is reset
