@@ -13,6 +13,9 @@
 
 module tb();
 
+timeunit 100us;
+timeprecision 1us;
+	
 logic clk ;
 logic reset ;// Reset signal
 logic [7:0] address ;// Register Address
@@ -28,14 +31,11 @@ logic ack;
 
 packet_st_gen_mm dut1(.clk(clk), .reset(reset),.address(address),.write(write), .read(read), .waitrequest(waitrequest), .writedata(writedata), .readdata(readdata));
 
-always
-begin
-#50000ns clk = 0;
-#50000ns clk = 1;
-end
+//Clock Generator for 10Khz
+always clk = #0.5 ~clk;
 
-
-task  newrequest(input [7:0] addr, input logic r, input logic w,input logic [7:0] wd); // task to send the new request to the slave module
+// task to send the new request to the slave module
+task  newrequest(input [7:0] addr, input logic r, input logic w,input logic [7:0] wd); 
 
 address = addr; write = w ; read = r ; writedata = wd;
 
@@ -49,7 +49,8 @@ begin
 	reset = 0;
 	$monitor($time ,"readdata = %d  ,read = %d,write = %d , address =%d, writedata = %d, count new  =%d, ack =%d", readdata,read,write,address,writedata,countvalue, ack);
 	
-	wait(!waitrequest)
+	// wait for falling edge of waitrequest to send next data
+	wait(!waitrequest) 
 	@(posedge clk);newrequest(1,0,1,181);
 	#10;
 	
